@@ -57,7 +57,7 @@ class InlineConsoleReportWriter extends AbstractReportWriter {
             String file = results.path
             def violations = results.violations.findAll { v -> v.rule.priority <= maxPriority }
             violations.sort { violation -> violation.rule.priority }.each { violation ->
-                writer.println "${file}:${violation.lineNumber}:${violation.rule.name} ${violation.message}"
+                writer.println "${file}:${violation.lineNumber}:${violation.rule.name}. ${violation.message}"
             }
         }
     }
